@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using SimpleHttpServer.Models;
+using SimpleMVC.App.BindingModels;
 using SimpleMVC.App.Data;
 using SimpleMVC.App.Models;
 using SimpleMVC.App.MVC.Attributes.Methods;
@@ -30,17 +31,26 @@ namespace SimpleMVC.App.Controllers
             var viewModel = service.GetProducts();
             return this.View(viewModel);
         }
+       
+
         [HttpGet]
         public IActionResult Contacts()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Contacts(Message message)
+        public IActionResult Contacts(MeesageBindingModel message)
         {
-             var service = new MessageService();
+            if (string.IsNullOrEmpty(message.Sender) || string.IsNullOrEmpty(message.Subject))
+            {
+                this.Redirect(new HttpResponse() , "/home/contacts");
+                
+            }
+            var service = new MessageService();
+
             service.AddMessageToBase(message);
-            return View();
+            
+            return View("Home","Index");
         }
     }
 }

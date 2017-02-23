@@ -134,7 +134,7 @@ namespace SimpleMVC.App.MVC.Routers
             int index = 0;
             foreach (ParameterInfo param in parameters)
             {
-                if (param.ParameterType.IsPrimitive)
+                if (param.ParameterType.IsPrimitive )
                 {
                     object value = this.getParams[param.Name];
                     this.methodParams[index] = Convert.ChangeType(

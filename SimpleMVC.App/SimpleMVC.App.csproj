@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppStart.cs" />
+    <Compile Include="BindingModels\MeesageBindingModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\SharpStoreContex.cs" />
@@ -95,9 +96,7 @@
       <Name>SimpleHttpServer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BindingModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

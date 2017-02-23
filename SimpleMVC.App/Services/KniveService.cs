@@ -13,9 +13,11 @@ namespace SimpleMVC.App.Services
         {
             this.contex = contex;
         }
+
         public IEnumerable<ProductViewModel> GetProducts()
         {
             var knives = this.contex.Knives.ToArray();
+
             var viewMOdels = new List<ProductViewModel>();
             foreach (var knive in knives)
             {
@@ -28,7 +30,10 @@ namespace SimpleMVC.App.Services
                 });
             }
 
+
             return viewMOdels;
         }
+
+        
     }
 }
