@@ -1,4 +1,6 @@
-﻿using SimpleHttpServer;
+﻿using System;
+using SimpleHttpServer;
+using SimpleMVC.App.Enums;
 using SimpleMVC.App.MVC;
 
 namespace SimpleMVC.App
@@ -7,6 +9,7 @@ namespace SimpleMVC.App
     {
         static void Main(string[] args)
         {
+            
             HttpServer server = new HttpServer(8081, RouteTable.Routes);
             MvcEngine.Run(server);
         }

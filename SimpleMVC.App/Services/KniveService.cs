@@ -14,9 +14,9 @@ namespace SimpleMVC.App.Services
             this.contex = contex;
         }
 
-        public IEnumerable<ProductViewModel> GetProducts()
+        public IEnumerable<ProductViewModel> GetProducts(string productName)
         {
-            var knives = this.contex.Knives.ToArray();
+            var knives = this.contex.Knives.Where(x => x.Name.Contains(productName)).ToArray();
 
             var viewMOdels = new List<ProductViewModel>();
             foreach (var knive in knives)

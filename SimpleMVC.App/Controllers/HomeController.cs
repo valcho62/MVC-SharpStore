@@ -25,10 +25,30 @@ namespace SimpleMVC.App.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult<IEnumerable<ProductViewModel>>  Products()
+        public IActionResult Buy()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Buy (BuyBindingModel buyModel)
+        {
+            if (string.IsNullOrEmpty(buyModel.Name) )
+            {
+                this.Redirect(new HttpResponse(), "/home/buy");
+
+            }
+            var service = new BuyService();
+
+            service.AddSaleToBase(buyModel);
+
+            return View("Home", "Index");
+        }
+        [HttpGet]
+        public IActionResult<IEnumerable<ProductViewModel>> Products (string productName)
         {
             KniveService service = new KniveService(Data.Data.Contex);
-            var viewModel = service.GetProducts();
+            var viewModel = service.GetProducts(productName);
             return this.View(viewModel);
         }
        

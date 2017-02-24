@@ -58,23 +58,34 @@
     <div class="container col-lg-5 col-lg-offset-4">
       <form class="form-horizontal" method="POST">
         <div class="form-group ">
-          <label class="control-label col-sm-2 " for="Sender">Your Email:</label>
+          <label class="control-label col-sm-2 " for="Name">Name:</label>
           <div class="input-group col-sm-10 ">
-            <input type="email" class="form-control " id="sender" name="Sender" placeholder="Enter email ">
-            <span class="input-group-addon" id="basic-addon2">*</span>
+            <input type="text" class="form-control " id="name" name="Name" placeholder="Enter your name ">
+            
           </div>
         </div>
         <div class="form-group ">
-          <label class="control-label col-sm-2 " for="Subject">Subject</label>
+          <label class="control-label col-sm-2 " for="Phone">Phone</label>
           <div class="input-group col-sm-10 ">
-            <input type="text" class="form-control " id="subject" name="Subject" placeholder="Enter subject">
-          <span class="input-group-addon" id="basic-addon2">*</span>
+            <input type="text" class="form-control " id="phone" name="Phone" placeholder="Enter phone">
+         
           </div>
         </div>
-        <div class="form-group ">
-          <label class="control-label col-sm-2 " for="messagetext">Message</label>
+         <div class="form-group ">
+          <label class="control-label col-sm-2 " for="Address">Address</label>
           <div class="input-group col-sm-10 ">
-            <textarea name="MessageText" id="messagetext" cols="53" rows="5" placeholder="Enter your message"></textarea>
+            <input type="text" class="form-control " id="address" name="Address" placeholder="Enter address">
+          
+          </div>
+        </div>
+        <div class="form-group ">  
+          <label class="control-label col-sm-2 " for="Economic">Delivery</label>         
+          <div class="input-group col-sm-offset-1 col-sm-10 ">
+            <div class="radio col-sm-offset-1"> 
+                
+            <input type="radio"   id="delivery" name="Delivery" value="Economic" checked>Economic
+            <label><input type="radio"  id="delivery" name="Delivery" value="Express">Express</label>
+           </div>
           </div>
         </div>
         <div class="form-group ">

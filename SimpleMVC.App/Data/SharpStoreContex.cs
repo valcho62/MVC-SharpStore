@@ -15,6 +15,7 @@ namespace SimpleMVC.App.Data
         }
         public virtual DbSet<Knive> Knives { get; set; }
         public virtual DbSet<Message> Messages { get; set; }
+        public virtual DbSet<Sales> Sales { get; set; }
 
     }
 

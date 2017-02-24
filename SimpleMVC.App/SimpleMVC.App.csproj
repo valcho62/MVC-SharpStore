@@ -55,12 +55,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppStart.cs" />
+    <Compile Include="BindingModels\BuyBindingModel.cs" />
     <Compile Include="BindingModels\MeesageBindingModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\SharpStoreContex.cs" />
+    <Compile Include="Enums\TypeDelivery.cs" />
+    <Compile Include="Migrations\201702231411057_sales.cs" />
+    <Compile Include="Migrations\201702231411057_sales.Designer.cs">
+      <DependentUpon>201702231411057_sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Knive.cs" />
     <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\Sales.cs" />
     <Compile Include="MVC\Attributes\Methods\HttpGetAttribute.cs" />
     <Compile Include="MVC\Attributes\Methods\HttpMethodAttribute.cs" />
     <Compile Include="MVC\Attributes\Methods\HttpPostAttribute.cs" />
@@ -78,10 +86,12 @@
     <Compile Include="MVC\ViewEngine\Generic\ActionResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteTable.cs" />
+    <Compile Include="Services\BuyService.cs" />
     <Compile Include="Services\KniveService.cs" />
     <Compile Include="Services\MessageService.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="Views\Home\About.cs" />
+    <Compile Include="Views\Home\Buy.cs" />
     <Compile Include="Views\Home\Contacts.cs" />
     <Compile Include="Views\Home\Index.cs" />
     <Compile Include="Views\Home\Products.cs" />
@@ -96,7 +106,11 @@
       <Name>SimpleHttpServer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702231411057_sales.resx">
+      <DependentUpon>201702231411057_sales.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,6 +4,7 @@ namespace SimpleMVC.App.ViewModels
 {
     public class ProductViewModel
     {
+        
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
@@ -19,7 +20,7 @@ namespace SimpleMVC.App.ViewModels
             sb.AppendLine("<div class=\"card-block\">");
             sb.AppendLine($"<h4 class=\"card-title\"><b>{this.Name}</b></h4>");
             sb.AppendLine($"<p class=\"card-text\">${this.Price:f2}</p> ");
-            sb.AppendLine("<p> <button type = \"button\" class=\"btn btn-primary\">Buy Now</button>");
+            sb.AppendLine("<p> <a href=\"/home/buy\" class=\"btn btn-primary\" role=\"button\">Buy Now</a>");
             sb.AppendLine("</div>");
             sb.AppendLine("</div>");
             sb.AppendLine("</div>");
